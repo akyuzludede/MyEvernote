@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CategoryManager.cs" />
     <Compile Include="DBCreatedOn.cs" />
+    <Compile Include="NoteManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
