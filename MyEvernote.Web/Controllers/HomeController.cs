@@ -20,7 +20,7 @@ namespace MyEvernote.Web.Controllers
             dBCreatedOn.Update_Test();
             dBCreatedOn.Delete_Test();
             dBCreatedOn.Insert_Comment();
-            */
+            */         
 
             /*CategoryControllerden TempData ile geliyor olsaydık bu alttaki blok kullanılacaktı.*/
             /*if (TempData["modelCategory"] != null)
