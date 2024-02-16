@@ -1,4 +1,7 @@
-﻿@{
+﻿@using MyEvernote.Entities
+@model List<Note>
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -45,223 +48,57 @@
 
             <div class="row">
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
+                @foreach (Note note in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#">@note.Title</a>
+                                </h4>
 
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
+                                <h6 class="text-right">
+                                    @note.Owner.Username <span class="glyphicon glyphicon-user"></span> <br />
+                                    @note.ModifiedOn.ToString("yyyy-MM-dd HH:mm") <span class="glyphicon glyphicon-time"></span> <br />
+                                </h6>
 
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                                @if (note.Text.Length > 70)
+                                {
+                                    <p>@(note.Text.Substring(0, 70) + "...")</p>
+                                    <p class="pull-right">
+                                        <a href="#">
+                                            Devamı
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p> @note.Text</p>
+                                }
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
+                            </div>
+                            <div>
+                                <hr />
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-comment"></span> Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button">
+                                        <span class="glyphicon glyphicon-star-empty"></span> @note.LikeCount
+                                    </button>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
 
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-
-                            <p>
-                                Mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span> cagatayerdogdu <br />
-                                <span class="glyphicon glyphicon-time"></span> @DateTime.Now <br />
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span> Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span> 15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                @*<div class="col-sm-4 col-lg-4 col-md-4">
-                        <h4>
-                            <a href="#">Like this template?</a>
-                        </h4>
-                        <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
-                    </div>*@
             </div>
         </div>
     </div>
