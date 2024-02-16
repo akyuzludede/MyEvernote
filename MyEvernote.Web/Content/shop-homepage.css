@@ -2,6 +2,8 @@
  * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+
+    ------- KULLANILAN CSS
  */
 
 body {
@@ -22,7 +24,7 @@ body {
 }
 
 .caption {
-    height: 150px;
+    height: 155px;
     overflow: hidden;
 }
 
@@ -49,7 +51,7 @@ body {
         }
 
 .thumbnail {
-    height: 340px;
+    height: 345px;
     padding: 0;
 }
 
