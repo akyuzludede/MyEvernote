@@ -41,7 +41,7 @@ namespace MyEvernote.Web.Controllers
             CategoryManager categoryManager = new CategoryManager();
             Category cat = categoryManager.GetCategoryById(id.Value);
 
-            //Category cat = categoryManager.GetCategoryById(id.Value); // Bunu kullanabilmek için, Select action ında int id olması gerekir.
+            //Category cat = categoryManager.GetCategoryById(id.Value); // Bunu kullanabilmek için, Select action ında int id olması gerekir. 
 
             if (cat == null)
             {
